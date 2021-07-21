@@ -1,7 +1,15 @@
 {
+  "name": "feur-bot",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "nodemon feur.js"
+  },
   "dependencies": {
     "chalk": "^4.1.1",
     "discord.js": "^13.0.0-dev.07017a9.1626869177",
     "fs": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
   }
 }
