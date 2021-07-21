@@ -6,20 +6,17 @@ module.exports = class ReadyEvent extends BaseEvent {
     }
 
     async run(client) {
+        client.user.setActivity('dnd')
         console.log(
-            `Logged as ${client.user.tag} in ${client.guilds.cache.size} !`,
-            "ready"
+            `Logged as ${client.user.tag} in ${client.guilds.cache.size} !`
         ); // Console log ready
-        client.slashCmds.forEach((cmd) => {
-            client.slashCmds
-                .get(cmd.name)
-                .run(client)
-                .then(() => {
-                    console.log(
-                        "🎉  Succesfully posted " + cmd.name + " command !",
-                        "/"
-                    );
-                });
+        await client.guilds.cache.get('867101383152893982')?.commands.create(
+            {
+                name: "hello",
+                description: "Reply with Hello because I LOVE U !",
+            }
+        ).then((create) => {
+            console.log("posted")
         });
     }
 };

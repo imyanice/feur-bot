@@ -1,16 +1,14 @@
 const Feur = require("./base/Feur"),
     {
-        registerEvents,
         registerCommands,
-        registerPostCommands,
+        registerEvents,
     } = require("./utils/handler");
 
 const client = new Feur();
 
 const init = async () => {
-    await registerCommands(client, "../commands");
     await registerEvents(client, "../events");
-    await registerPostCommands(client, "../slashCommands");
+    await registerCommands(client, "../commands");
     await client.login(client.config.token);
 };
 

@@ -1,12 +1,28 @@
 const path = require("path");
 const fs = require("fs").promises;
 const BaseEvent = require("../base/BaseEvent");
-const BasePostCommand = require("../base/BasePostCommand");
-let connection;
+const BasePostCommand = require("../base/PostCommand");
+const BaseCommand = require("../base/BaseCommand");
 
-(async () => {
-    connection = await require("../database/db");
-})();
+async function registerCommands(client, dir = "") {
+    const filePath = path.join(__dirname, dir);
+    const files = await fs.readdir(filePath);
+    for (const file of files) {
+        const stat = await fs.lstat(path.join(filePath, file));
+        if (stat.isDirectory())
+            await registerCommands(client, path.join(dir, file));
+        if (file.endsWith(".js")) {
+            const Command = require(path.join(filePath, file));
+            if (Command.prototype instanceof BaseCommand) {
+                const cmd = new Command();
+                await client.commands.set(cmd.name, cmd);
+                console.log(
+                    "🎉  Successfully registered " + cmd.name + " command !",
+                );
+            }
+        }
+    }
+}
 
 async function registerEvents(client, dir = "") {
     const filePath = path.join(__dirname, dir);
@@ -18,30 +34,14 @@ async function registerEvents(client, dir = "") {
             const Event = require(path.join(filePath, file));
             if (Event.prototype instanceof BaseEvent) {
                 const event = new Event();
-                client.logger.log(
-                    "🎉  Succesfully registered " + event.name + " event !",
-                    "event"
+                console.log(
+                    "🎉  Succesfully registered " + event.name + " event !"
                 );
-                client.on(event.name, event.run.bind(event, client, connection));
-            }
-        }
-    }
-}
-async function registerPostCommands(client, dir = "") {
-    const filePath = path.join(__dirname, dir);
-    const files = await fs.readdir(filePath);
-    for (const file of files) {
-        const stat = await fs.lstat(path.join(filePath, file));
-        if (stat.isDirectory())
-            await registerPostCommands(client, path.join(dir, file));
-        if (file.endsWith(".js")) {
-            const Command = require(path.join(filePath, file));
-            if (Command.prototype instanceof BasePostCommand) {
-                const cmd = new Command();
-                client.slashCmds.set(cmd.name, cmd);
+                client.on(event.name, event.run.bind(event, client));
             }
         }
     }
 }
 
-module.exports = {registerEvents, registerPostCommands };
+
+module.exports = {registerEvents, registerCommands };

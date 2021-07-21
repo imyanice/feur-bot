@@ -4,9 +4,6 @@ module.exports = class PostCommand {
     }
 
     async post(client, data, guild) {
-        await client.guilds.cache
-            .get(guild)
-            ?.commands.create(data)
-            .catch((e) => console.log(e));
+        await client.guilds.cache.get('867101383152893982')?.commands.create(data);
     }
 };

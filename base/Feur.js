@@ -15,7 +15,7 @@ class Feur extends Client {
 
         this.config = require("../config");
         this.events = new Map();
-        this.slashCmds = new Map();
+        this.commands = new Map();
     }
 }
 
