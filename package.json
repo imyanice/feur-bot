@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "discord.js": "^13.0.0-dev.07017a9.1626869177",
+    "fs": "^0.0.1-security"
+  }
+}
