@@ -7,7 +7,7 @@ module.exports = class InteractionEvent extends BaseEvent {
 
     async run(client, message) {
         if (message.author.bot) return;
-        if (message.content.endsWith("koi") || message.content.endsWith("coi") ||message.content.endsWith("qoi") ||message.content.endsWith("qwa") || message.content.endsWith("quoi") || message.content.endsWith("coi") || message.content.endsWith("cwa")) {
+        if (message.content.toLowerCase().endsWith("koi") || message.content.toLowerCase().endsWith("coi") ||message.content.toLowerCase().endsWith("qoi") ||message.content.toLowerCase().endsWith("qwa") || message.content.toLowerCase().endsWith("quoi") || message.content.toLowerCase().endsWith("coi") || message.content.toLowerCase().endsWith("cwa") || message.content.toLowerCase().endsWith("pk") || message.content.toLowerCase().endsWith("pourquoi")) {
             message.reply("-feur")
         }
     }

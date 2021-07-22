@@ -5,6 +5,6 @@ module.exports = class Hi extends BaseCommand {
         super("hello", "fun");
     }
     async run(client, interaction) {
-        await interaction.reply("Hello world !");
+        await interaction.reply("Feur feuuur feeur fffeur ffeeurr ! (Bonjour en feuririen)");
     }
 };
