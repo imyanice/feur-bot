@@ -23,6 +23,7 @@ module.exports = class InteractionEvent extends BaseEvent {
             || message.content.toLowerCase().endsWith("pourcwa")
             || message.content.toLowerCase().endsWith("pourcoi")
         ) {
+
             message.reply("-feur");
         } else if (
                message.content.toLowerCase().endsWith("oui")
