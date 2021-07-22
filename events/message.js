@@ -31,5 +31,6 @@ module.exports = class InteractionEvent extends BaseEvent {
         ) {
             message.reply("-stiti")
         }
+
     }
 };
