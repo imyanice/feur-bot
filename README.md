@@ -3,8 +3,8 @@
 # Template-JS
 
 [![CodeFactor](https://www.codefactor.io/repository/github/yan-jobs/feur-bot/badge)](https://www.codefactor.io/repository/github/yan-jobs/template-js)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FYan-Jobs%2Ffeur-bot.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FYan-Jobs%2Ffeur-bot?ref=badge_shield)
 ![](https://shields.io/github/license/Yan-Jobs/feur-bot)
-![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FYan-Jobs%2Ffeur-bot.svg?type=shield)
 ![](https://img.shields.io/discord/831251454655594506.svg?logo=discord&colorB=7289DA&label=Yan%27s%20Dev)
 
 ## Installation
