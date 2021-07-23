@@ -1,8 +1,8 @@
-const { Client, Intents } = require("discord.js");
+const { Client, Intents } = require("discord.js"); // Require the Discord.JS@dev (V13) library
 
-class Feur extends Client {
+class Feur extends Client { // Create my new client
     constructor() {
-        super({
+        super({ // Connect with Intents
             intents: [
                 Intents.FLAGS.GUILDS,
                 Intents.FLAGS.GUILD_MEMBERS,
@@ -13,10 +13,9 @@ class Feur extends Client {
             ],
         });
 
-        this.config = require("../config");
-        this.events = new Map();
-        this.commands = new Map();
+        this.config = require("../config"); // Load the config file
+        this.commands = new Map(); // Create the command Map
     }
 }
 
-module.exports = Feur;
+module.exports = Feur; // Export the new client

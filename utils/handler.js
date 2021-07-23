@@ -1,7 +1,6 @@
 const path = require("path");
 const fs = require("fs").promises;
 const BaseEvent = require("../base/BaseEvent");
-const BasePostCommand = require("../base/PostCommand");
 const BaseCommand = require("../base/BaseCommand");
 
 async function registerCommands(client, dir = "") {
@@ -44,4 +43,4 @@ async function registerEvents(client, dir = "") {
 }
 
 
-module.exports = {registerEvents, registerCommands };
+module.exports = { registerEvents, registerCommands };

@@ -15,8 +15,8 @@ module.exports = class ReadyEvent extends BaseEvent {
                 name: "hello",
                 description: "Reply with Hello because I LOVE U !",
             }
-        ).then((create) => {
-            console.log("posted")
+        ).then(() => {
+            console.log("All the commands are successfully posted !");
         });
     }
 };

@@ -12,7 +12,7 @@ const init = async () => {
     await client.login(client.config.token);
 };
 
-init();
+init().then(() => console.log("Init terminé"));
 
 
 // If there is an unhandledRejection, log it
