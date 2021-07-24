@@ -8,6 +8,7 @@ module.exports = class InteractionEvent extends BaseEvent {
 
   async run(client, interaction) {
     if (interaction.isCommand()) {
+      /*console.log(interaction);*/
       // console.log(interaction) If you want to see the JSON object.
       const command = interaction.commandName; // Take the command name
       const commandRegistered = client.commands.get(command); // Get the command from our command map
