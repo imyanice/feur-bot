@@ -7,8 +7,9 @@ module.exports = class MessageEvent extends BaseEvent { // Create our message ev
 
     async run(client, message) {
         if (message.author.bot) return; // If the message is sent by a bot ignore it
-        if ( // Check if the message ends with "quoi" (what in english) (there is also the sms way)
-               message.content.toLowerCase().endsWith("koi")
+        const active = client.db.get(message.guild.id);
+        if (active === "on") {if ( // Check if the message ends with "quoi" (what in english) (there is also the sms way)
+            message.content.toLowerCase().endsWith("koi")
             || message.content.toLowerCase().endsWith("koua")
             || message.content.toLowerCase().endsWith("kwa")
             || message.content.toLowerCase().endsWith("coi")
@@ -40,11 +41,11 @@ module.exports = class MessageEvent extends BaseEvent { // Create our message ev
         ) {
             message.reply("-feur"); // Reply with the fateful message
         } else if ( // Check if the message ends with "oui" (yes in english) (there is also the sms way)
-               message.content.toLowerCase().endsWith("oui")
+            message.content.toLowerCase().endsWith("oui")
             || message.content.toLowerCase().endsWith("ui")
             || message.content.toLowerCase().endsWith("wi")
         ) {
             message.reply("-stiti") // Reply with the fateful message
-        }
+        }}
     }
 };

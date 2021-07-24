@@ -1,4 +1,5 @@
 const { Client, Intents } = require("discord.js"); // Require the Discord.JS@dev (V13) library
+const Database = require("easy-json-database");
 
 class Feur extends Client { // Create my new client
     constructor() {
@@ -15,6 +16,13 @@ class Feur extends Client { // Create my new client
 
         this.config = require("../config"); // Load the config file
         this.commands = new Map(); // Create the command Map
+        this.db = new Database("./db.json", {
+            snapshots: {
+                enabled: true,
+                interval: 24 * 60 * 60 * 1000,
+                folder: "./backups/"
+            }
+        })
     }
 }
 
