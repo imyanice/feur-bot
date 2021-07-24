@@ -1,4 +1,5 @@
 const BaseEvent = require("../base/BaseEvent"); // Require the base event file
+const datas = require("../commands/api/commands");
 
 module.exports = class GuildCreateEvent extends BaseEvent {
   // Create the Ready event
