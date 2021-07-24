@@ -2,7 +2,8 @@
   "name": "feur-bot",
   "version": "2.0.0",
   "scripts": {
-    "dev": "nodemon feur.js"
+    "dev": "nodemon feur.js",
+    "clean": "prettier -w ."
   },
   "dependencies": {
     "chalk": "^4.1.1",
@@ -11,6 +12,7 @@
     "fs": "^0.0.1-security"
   },
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "prettier": "^2.3.2"
   }
 }

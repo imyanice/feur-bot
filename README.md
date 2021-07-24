@@ -14,17 +14,19 @@
     - Fill the correct inforamtions in `config.sample.js` and rename it to `config.js`,
     - Start the script by typing: `npm run dev` or `yarn dev`,
     - ✨ Enjoy !
-⚠️ Don't forget to install the last version of NodeJS *at least v14* !
+
+⚠️ Don't forget to install the last version of NodeJS _at least v14_ !
 
 #### If you want a hosted version 24h/24h, you can get it [here](https://discord.com/api/oauth2/authorize?client_id=867380663275880459&permissions=2218118208&scope=bot%20applications.commands)
 
 ## Contributors
+
 All the contributors of this project are:
 
       - Me
 
-
-
 ## License
+
 This project is licensed under the `GPL-3.0` License, for more information see the LICENSE file.
+
 </div>
