@@ -7,7 +7,10 @@ module.exports = class Off extends BaseCommand {
     super("off"); // Register the command
   }
   async run(client, interaction) {
-    if (!interaction.member.permissions.has("MANAGE_MESSAGES")) return interaction.reply(":x: Tu n'as pas la permission nécessaire: **Gérer les messages** !");
+    if (!interaction.member.permissions.has("MANAGE_MESSAGES"))
+      return interaction.reply(
+        ":x: Tu n'as pas la permission nécessaire: **Gérer les messages** !"
+      );
     const row = new MessageActionRow().addComponents(
       new MessageButton()
         .setCustomId("offyes")
