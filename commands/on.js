@@ -1,4 +1,5 @@
 const BaseCommand = require("../base/BaseCommand"); // Require the base command file
+const { MessageActionRow, MessageButton } = require("discord.js");
 
 module.exports = class On extends BaseCommand {
   // Create the hi command
