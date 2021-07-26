@@ -11,4 +11,8 @@ module.exports = [
     name: "off",
     description: "Disable the feur bot",
   },
+  {
+    name: "info",
+    description: "Montre le menu d'information",
+  }
 ];

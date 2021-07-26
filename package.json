@@ -9,7 +9,8 @@
     "chalk": "^4.1.1",
     "discord.js": "^13.0.0-dev.870a0de.1626998625",
     "easy-json-database": "^1.5.0",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "moment": "^2.29.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.12",
