@@ -7,7 +7,7 @@ module.exports = class Info extends BaseCommand {
         super("info"); // Register the command
     }
     async run(client, interaction) {
-        const ping = Math.floor(interaction.createdTimestamp - Date.now());
+        const ping = Math.floor(Date.now() - interaction.createdTimestamp);
 
         const embed = new MessageEmbed()
             .setTitle("Stats du bot :robot: !")
